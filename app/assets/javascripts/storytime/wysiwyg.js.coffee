@@ -47,13 +47,13 @@ class Storytime.Dashboard.Wysiwyg
 
     $("[data-toggle='codemirror']").click ->
       self.closeImageControls()
-      mediumEditor.activate()
+      mediumEditor.setup()
 
     $("body").click (e) ->
       target = $(e.target)
       if !target.is(".medium-editor img") && !target.hasClass("medium-image-controls") && !(target.closest(".medium-image-controls").length > 0) && $('.medium-image-controls').is(":visible")
         self.closeImageControls()
-        mediumEditor.activate()
+        mediumEditor.setup()
 
     $('body').on "keyup", "#medium-image-caption", () ->
       caption = $(".medium-active-image").parent(".storytime-image").find(".storytime-image-caption")
@@ -71,7 +71,7 @@ class Storytime.Dashboard.Wysiwyg
         $("#medium-image-caption").val($(this).parent(".storytime-image").find(".storytime-image-caption").text())
         $("#medium-image-button").hide()
         $(".medium-image-controls").show()
-        mediumEditor.deactivate()
+        mediumEditor.destroy()
 
     $('body').on "keyup", "#medium-image-width", () ->
       $img = $(".medium-active-image")
@@ -109,7 +109,7 @@ class Storytime.Dashboard.Wysiwyg
       image.remove()
       self.updateFromMediumEditor()
       self.closeImageControls()
-      mediumEditor.activate()
+      mediumEditor.setup()
 
   openImageControls: (image) ->
     image.addClass("medium-active-image")
@@ -173,11 +173,11 @@ class Storytime.Dashboard.Wysiwyg
         codemirror.refresh()
         if code.is(":visible")
           $(this).children("i").removeClass("fa-code").addClass("fa-font")
-          mediumEditor.deactivate()
+          mediumEditor.destroy()
           $("#storytime-modal").addClass("modal-wide")
         else
           $(this).children("i").removeClass("fa-font").addClass("fa-code")
-          mediumEditor.activate()
+          mediumEditor.setup()
           $("#storytime-modal").removeClass("modal-wide")
 
     $("#storytime-modal").on 'hide.bs.modal', ->
@@ -185,7 +185,7 @@ class Storytime.Dashboard.Wysiwyg
 
   bindActionPanel: (wysiwyg, mediumEditor) ->
     $(".post-action-panel").on "show.bs.collapse", ->
-      mediumEditor.activate()
+      mediumEditor.setup()
       wysiwyg.find('.editor').show()
       wysiwyg.find('.CodeMirror').hide()
   
