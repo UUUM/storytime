@@ -1,9 +1,11 @@
 class Storytime.Dashboard.Wysiwyg
-  mediumEditorOptions = 
-    buttons: ['bold', 'italic', 'underline', 'anchor', 'header1', 'header2', 'quote', 'unorderedlist', 'orderedlist', 'pre']
-    toolbarAlign: 'center'
+  mediumEditorOptions =
     buttonLabels: 'fontawesome'
-    checkLinkFormat: true
+    toolbar:
+      buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'h4', 'justifyLeft', 'justifyCenter', 'justifyRight', 'quote', 'unorderedlist', 'orderedlist', 'pre', 'removeFormat']
+      align: 'center'
+    anchor:
+      linkValidation: true
 
   codeMirrorOptions = 
     mode: 'htmlmixed'
