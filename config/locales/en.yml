@@ -114,6 +114,7 @@ en:
       remove_image: "Remove Image"
       new:
         header: "New %{resource}"
+      confirm_publish: "Are you sure you want to publish?"
     navigations:
       create:
         success: "Your navigation list was created successfully."
