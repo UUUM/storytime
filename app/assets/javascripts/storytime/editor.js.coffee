@@ -133,6 +133,7 @@ class Storytime.Dashboard.Editor
     )
 
     $(".save").click(->
+      $("#post_published").val(0)
       form.data "unsaved-changes", false
       return
     )
