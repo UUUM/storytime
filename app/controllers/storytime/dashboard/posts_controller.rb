@@ -89,6 +89,15 @@ module Storytime
         @blog = Blog.friendly.find(params[:blog_id])
         @posts = @blog.posts.page(params[:page_number]).per(10)
 
+        search_post = if params[:search_post].present?
+          search_post_params
+        else
+          {q: params[:q]}
+        end
+
+        @search_post = Search::Post.new(search_post)
+        @posts = @search_post.matches(@posts)
+
         @posts = if params[:published].present? && params[:published] == "true"
           @posts.published
         elsif params[:draft].present? && params[:draft] == "true"
@@ -149,6 +158,10 @@ module Storytime
         else
           Storytime.on_publish_with_notifications.call(@post)
         end
+      end
+
+      def search_post_params
+        params.require(:search_post).permit(Search::Post::ATTRIBUTES)
       end
     end
   end
