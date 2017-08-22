@@ -1,3 +1,4 @@
+<% if params[:blog_id] %>
 <li class="pull-right">
   <div class="btn-group margin-right" style="margin-right: 10px;">
   <%= form_for(@search_post, url: dashboard_blog_blog_page_post_index_path, html: { method: :get, class: 'form-horizontal', role: 'form' }) do |f| %>
@@ -10,3 +11,4 @@
   <% end %>
   </div>
 </li>
+<% end %>
