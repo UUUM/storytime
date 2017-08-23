@@ -133,11 +133,15 @@ class Storytime.Dashboard.Editor
     )
 
     $(".save").click(->
-      $("#post_published").val(0)
       form.data "unsaved-changes", false
       return
     )
 
+    $(".save.draft").click(->
+      $("#post_published").val(0)
+      return
+    )
+    
     $(window).on "beforeunload", ->
       if form.data("unsaved-changes") && !window.Storytime.test_env
         return "You haven't saved your changes." 
