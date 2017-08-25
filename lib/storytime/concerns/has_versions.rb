@@ -60,6 +60,7 @@ module Storytime
         else
           self.published_at_date = nil
           self.published_at_time = nil
+          self.published_at = nil
         end
       end
 
