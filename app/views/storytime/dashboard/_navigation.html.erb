@@ -10,13 +10,13 @@
           <li>
             <%= link_to [storytime, :dashboard, :memberships], class: "storytime-modal-trigger", remote: true, id: "users-link" do %>
               <i class="icon-st-icons-users"></i>
-              <span style="margin-left: 10px; margin-right: 6px;">Users</span>
+              <span style="margin-left: 10px; margin-right: 6px;"><%= t("dashboard.navigations.users") %></span>
             <% end %>
           </li>
           <li>
             <%= link_to storytime.edit_dashboard_membership_path(current_user.storytime_membership_in_site(@current_storytime_site)), class: "storytime-modal-trigger", remote: true, id: "profile-link" do %>
               <i class="icon-st-icons-profile"></i>
-              <span style="margin-left: 10px; margin-right: 6px;">My Account</span>
+              <span style="margin-left: 10px; margin-right: 6px;"><%= t("dashboard.navigations.my_account") %></span>
             <% end %>
           </li>
         <% end %>
@@ -25,13 +25,13 @@
           <li>
             <%= link_to dashboard_nav_site_path(@current_storytime_site), class: "storytime-modal-trigger", remote: true, id: "site-settings-link" do %>
               <i class="icon-st-icons-settings"></i>
-              <span style="margin-left: 10px; margin-right: 6px;">Site Settings</span>
+              <span style="margin-left: 10px; margin-right: 6px;"><%= t("dashboard.navigations.site_settings") %></span>
             <% end %>
           </li>
           <li>
             <%= link_to storytime.edit_multiple_dashboard_roles_path, class: "storytime-modal-trigger", remote: true, id: "site-permissions-link" do %>
               <i class="icon-st-icons-permission"></i>
-              <span style="margin-left: 10px; margin-right: 6px;">Permissions</span>
+              <span style="margin-left: 10px; margin-right: 6px;"><%= t("dashboard.navigations.permissions") %></span>
             <% end %>
           </li>
         <% end %>
@@ -39,7 +39,7 @@
           <li>
             <%= link_to [storytime, :dashboard, Storytime::Subscription], class: "storytime-modal-trigger", remote: true, id: "subscriptions-link" do %>
               <i class="icon-st-icons-subscribe"></i>
-              <span style="margin-left: 10px; margin-right: 6px;">Subsciptions</span>
+              <span style="margin-left: 10px; margin-right: 6px;"><%= t("dashboard.navigations.subscriptions") %></span>
             <% end %>
           </li>
         <% end %>
@@ -47,7 +47,7 @@
         <li>
           <%= link_to Storytime.logout_path, method: Storytime.logout_method do %>
             <i class="icon-st-icons-logout"></i>
-            <span style="margin-left: 10px; margin-right: 6px;">Log Out</span>
+            <span style="margin-left: 10px; margin-right: 6px;"><%= t("dashboard.navigations.log_out") %></span>
           <% end %>
         </li>
       </ul>

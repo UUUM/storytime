@@ -17,13 +17,13 @@
               <li>
                 <%= link_to [:edit, :dashboard, @blog], remote: true, class: "storytime-modal-trigger" do %>
                   <i class="icon-st-icons-settings"></i>
-                  Blog Settings
+                  <%= t("dashboard.posts.blog_settings") %>
                 <% end %>
               </li>
               <li>
                 <%= link_to url_for([:dashboard, @blog]),  method: :delete, data: { confirm: t('common.are_you_sure_you_want_to_delete', resource_name: @blog.human_name) } do %>
                   <i class="icon-st-icons-delete"></i>
-                  Delete
+                  <%= t("dashboard.posts.delete") %>
                 <% end %>
               </li>
             </ul>
@@ -42,23 +42,23 @@
       <ul class="nav nav-tabs">
         <li role="presentation" class="<%= 'active' unless (params[:published] == 'true' || params[:draft] == 'true') %>">
           <% if @blog %>
-            <%= link_to "All", [:dashboard, @blog, :blog_page_post_index, published: nil, draft: nil] %>
+            <%= link_to t("dashboard.posts.all"), [:dashboard, @blog, :blog_page_post_index, published: nil, draft: nil] %>
           <% else %>
-            <%= link_to "All", [:dashboard, current_post_type, published: nil, draft: nil] %>
+            <%= link_to t("dashboard.posts.all"), [:dashboard, current_post_type, published: nil, draft: nil] %>
           <% end %>
         </li>
         <li role="presentation" class="<%= 'active' if params[:draft] == 'true' %>">
           <% if @blog %>
-            <%= link_to "Drafts", [:dashboard, @blog, :blog_page_post_index, published: nil, draft: true] %>
+            <%= link_to t("dashboard.posts.drafts"), [:dashboard, @blog, :blog_page_post_index, published: nil, draft: true] %>
           <% else %>
-            <%= link_to "Drafts", [:dashboard, current_post_type, draft: true] %>
+            <%= link_to t("dashboard.posts.drafts"), [:dashboard, current_post_type, draft: true] %>
           <% end %>
         </li>
         <li role="presentation" class="<%= 'active' if params[:published] == 'true' %>">
           <% if @blog %>
-            <%= link_to "Published", [:dashboard, @blog, :blog_page_post_index, published: 'true'] %>
+            <%= link_to t("dashboard.posts.published"), [:dashboard, @blog, :blog_page_post_index, published: 'true'] %>
           <% else %>
-            <%= link_to "Published", [:dashboard, current_post_type, published: 'true'] %>
+            <%= link_to t("dashboard.posts.published"), [:dashboard, current_post_type, published: 'true'] %>
           <% end %>
         </li>
 

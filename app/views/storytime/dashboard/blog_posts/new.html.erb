@@ -19,8 +19,8 @@
         <%= link_to '#', class: "btn btn-default btn-icon margin-right", data: { toggle: "collapse", target: '#featured-images-panel' } do %>
           <i class="icon-st-icons-images"></i>
         <% end %>
-        <button id="preview_post" class="btn btn-primary btn-outline btn-sm margin-right">Preview</button>
-        <%= link_to "Save / Publish", "#", class: 'btn btn-primary btn-sm btn-outline', data: { toggle: 'collapse', target: '#post-advanced-settings' } %>
+        <button id="preview_post" class="btn btn-primary btn-outline btn-sm margin-right"><%= t("dashboard.posts.preview_button") %></button>
+        <%= link_to t("dashboard.posts.save_publish_button"), "#", class: 'btn btn-primary btn-sm btn-outline', data: { toggle: 'collapse', target: '#post-advanced-settings' } %>
       </div>
     </div>
     <%= render 'storytime/dashboard/posts/image_toolbar' %>

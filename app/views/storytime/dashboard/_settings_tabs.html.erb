@@ -3,7 +3,7 @@
     <li role="presentation" <%= active_nav_item_class("memberships") %>>
       <%= link_to [:dashboard, :memberships], remote: true, class: "storytime-modal-trigger" do %>
         <i class="icon-st-icons-users"></i>
-        <span class="hidden-xs">Users</span>
+        <span class="hidden-xs"><%= t("dashboard.navigations.users") %></span>
       <% end %>
     </li>
   <% end %>
@@ -17,7 +17,7 @@
     <li role="presentation" <%= active_nav_item_class("roles") %>>
       <%= link_to edit_multiple_dashboard_roles_path, remote: true, class: "storytime-modal-trigger" do %>
         <i class="icon-st-icons-permission"></i>
-        <span class="hidden-xs">Permissions</span>
+        <span class="hidden-xs"><%= t("dashboard.navigations.permissions") %></span>
       <% end %>
     </li>
   <% end %>
@@ -25,7 +25,7 @@
     <li role="presentation" <%= active_nav_item_class("subscriptions") %>>
       <%= link_to [:dashboard, Storytime::Subscription], remote: true, class: "storytime-modal-trigger" do %>
         <i class="icon-st-icons-subscribe"></i>
-        <span class="hidden-xs">Subscriptions</span>
+        <span class="hidden-xs"><%= t("dashboard.navigations.subscriptions") %></span>
       <% end %>
     </li>
   <% end %>

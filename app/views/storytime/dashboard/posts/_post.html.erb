@@ -11,13 +11,13 @@
 
       <div class="col-md-6 text-muted text-right">
         <% if post.published? && post.published_at <= Time.now %>
-          Published <%= time_ago_in_words post.published_at %> ago
+          <%= t("dashboard.posts.published_date") %> <%= time_ago_in_words post.published_at %> <%= t("dashboard.posts.ago") %>
         <% elsif post.published? %>
-          <span class="label label-warning">Draft</span>
+          <span class="label label-warning"><%= t("dashboard.posts.draft") %></span>
           Scheduled to publish on <%= post.published_at.strftime("%B %e at %l:%M %p") %>
         <% else %>
-          <span class="label label-warning">Draft</span>
-          Last edited <%= time_ago_in_words post.updated_at %> ago
+          <span class="label label-warning"><%= t("dashboard.posts.draft") %></span>
+            <%= t("dashboard.posts.last_edited_date") %> <%= time_ago_in_words post.updated_at %> <%= t("dashboard.posts.ago") %>
         <% end %>
       </div>
     </div>

@@ -4,7 +4,7 @@
       <%= link_to icon("angle-left"), [:dashboard, Storytime::Snippet], class: "btn btn-sm btn-default pull-left storytime-modal-trigger", remote: true %>
       <div class="pull-right">
         <%= link_to "HTML", "#", class: "toggle-codemirror btn btn-sm btn-default", style: "margin-right: 10px;", data: { toggle: "codemirror" }  %>
-        <%= f.submit "Save", class: "btn btn-sm btn-primary btn-outline pull-right" %>
+        <%= f.submit t("dashboard.common.save_button"), class: "btn btn-sm btn-primary btn-outline pull-right" %>
       </div>
       
       <h3 class="scroll-panel-title">

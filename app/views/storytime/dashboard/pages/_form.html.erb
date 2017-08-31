@@ -7,7 +7,7 @@
             <ul class="list-group" style="margin: 0;">
               <%= render partial: 'storytime/dashboard/versions/version.html.erb', collection: @post.versions.order(created_at: :desc), locals: { versionable: @post } %>
             </ul>
-            <%= link_to "Done", '#', class: "btn btn-primary btn-outline pull-right", style: "margin-top: 10px; margin-right: 15px;", data: { toggle: 'collapse', target: '#versions-panel' } %>
+            <%= link_to t("dashboard.posts.done_button"), '#', class: "btn btn-primary btn-outline pull-right", style: "margin-top: 10px; margin-right: 15px;", data: { toggle: 'collapse', target: '#versions-panel' } %>
           </div>
         </div>
       </div>
@@ -39,12 +39,12 @@
               <hr>
 
               <div class="post_actions">
-                <%= link_to "Cancel", '#', class: "btn btn-default", data: { toggle: 'collapse', target: '#post-advanced-settings' } %>
+                <%= link_to t("dashboard.common.cancel_button"), '#', class: "btn btn-default", data: { toggle: 'collapse', target: '#post-advanced-settings' } %>
 
                 <div class="pull-right">
-                  <%= f.submit "Save Draft", id: "save-draft-submit", class: "btn btn-default save draft" unless @post.published? %>
-                  <%= f.submit "Publish", class: "btn btn-primary btn-outline publish", publish: true, data: {confirm: t('dashboard.posts.confirm_publish')} unless @post.published? %>
-                  <%= f.submit "Update", class: "btn btn-primary btn-outline save" if @post.published? %>
+                  <%= f.submit t("dashboard.posts.draft_button"), id: "save-draft-submit", class: "btn btn-default save draft" unless @post.published? %>
+                  <%= f.submit t("dashboard.posts.publish_button"), class: "btn btn-primary btn-outline publish", publish: true, data: {confirm: t('dashboard.posts.confirm_publish')} unless @post.published? %>
+                  <%= f.submit t("dashboard.posts.update_button"), class: "btn btn-primary btn-outline save" if @post.published? %>
                 </div>
 
               </div>

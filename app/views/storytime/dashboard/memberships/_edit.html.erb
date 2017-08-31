@@ -2,7 +2,7 @@
   <div class="scroll-panel">
     <div class="scroll-panel-header">
       <%= link_to icon("angle-left"), [:dashboard, :memberships], class: "btn btn-sm btn-default pull-left storytime-modal-trigger", remote: true %>
-      <%= f.submit "Save", class: "btn btn-sm btn-primary btn-outline pull-right" %>
+      <%= f.submit t("dashboard.common.save_button"), class: "btn btn-sm btn-primary btn-outline pull-right" %>
       <h3 class="scroll-panel-title">
         <%= t('dashboard.users.edit_user_header') %>
       </h3>

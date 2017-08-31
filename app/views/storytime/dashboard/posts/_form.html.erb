@@ -7,7 +7,7 @@
             <ul class="list-group" style="margin: 0;">
               <%= render partial: 'storytime/dashboard/versions/version.html.erb', collection: @post.versions.order(created_at: :desc), locals: { versionable: @post } %>
             </ul>
-            <%= link_to "Done", '#', class: "btn btn-primary btn-outline pull-right", style: "margin-top: 10px; margin-right: 15px;", data: { toggle: 'collapse', target: '#versions-panel' } %>
+            <%= link_to t("dashboard.posts.done_button"), '#', class: "btn btn-primary btn-outline pull-right", style: "margin-top: 10px; margin-right: 15px;", data: { toggle: 'collapse', target: '#versions-panel' } %>
           </div>
         </div>
       </div>
@@ -56,12 +56,12 @@
               <hr>
 
               <div class="post_actions">
-                <%= link_to "Cancel", '#', class: "btn btn-default", data: { toggle: 'collapse', target: '#post-advanced-settings' } %>
+                <%= link_to f.submit t("dashboard.common.cancel_button"), '#', class: "btn btn-default", data: { toggle: 'collapse', target: '#post-advanced-settings' } %>
 
                 <div class="pull-right">
-                  <%= f.submit "Save Draft", id: "save-draft-submit", class: "btn btn-default save draft" %>
-                  <%= f.submit "Publish", class: "btn btn-primary btn-outline publish", publish: true unless @post.published? %>
-                  <%= f.submit "Update", class: "btn btn-primary btn-outline save" if @post.published? %>
+                  <%= f.submit t("dashboard.posts.draft_button"), id: "save-draft-submit", class: "btn btn-default save draft" %>
+                  <%= f.submit t("dashboard.posts.publish_button"), class: "btn btn-primary btn-outline publish", publish: true unless @post.published? %>
+                  <%= f.submit t("dashboard.posts.update_button"), class: "btn btn-primary btn-outline save" if @post.published? %>
                 </div>
                 
                 <% unless @post.is_a?(Storytime::Page) || @post.is_a?(Storytime::Blog) %>
@@ -97,7 +97,7 @@
                           </button>
                           <i class="icon-st-icons-images select_featured_image"></i>
                           <div class="select_featured_image">
-                            <%= link_to "Select Featured Image", "#", class: "btn btn-primary btn-outline text-lighter", id: "featured_media_button" %>
+                            <%= link_to t("dashboard.posts.select_featured_image"), "#", class: "btn btn-primary btn-outline text-lighter", id: "featured_media_button" %>
                           </div>
                         </div>
                       </div>
@@ -112,12 +112,12 @@
                           </button>
                           <i class="icon-st-icons-images select_featured_image"></i>
                           <div class="select_featured_image">
-                            <%= link_to "Select Secondary Image", "#", class: "btn btn-primary btn-outline text-lighter", id: "secondary_media_button" %>
+                            <%= link_to t("dashboard.posts.select_secondary_image"), "#", class: "btn btn-primary btn-outline text-lighter", id: "secondary_media_button" %>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <%= link_to "Done", '#', class: "btn btn-primary btn-outline pull-right", style: "margin-top: 10px;", data: { toggle: 'collapse', target: '#featured-images-panel' } %>
+                    <%= link_to t("dashboard.posts.done_button"), '#', class: "btn btn-primary btn-outline pull-right", style: "margin-top: 10px;", data: { toggle: 'collapse', target: '#featured-images-panel' } %>
                   </div>
                 </div>              
               </div>

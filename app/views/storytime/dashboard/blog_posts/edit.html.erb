@@ -30,21 +30,21 @@
             <li>
               <%= link_to '#', data: { toggle: 'collapse', target: '#versions-panel' } do %>
                 <i class="icon-st-icons-versions"></i>
-                History
+                <%= t("dashboard.posts.history") %>
               <% end %>
             </li>
             <li>
               <%= link_to url_for([:dashboard, @post]),  method: :delete, data: { confirm: t('common.are_you_sure_you_want_to_delete', resource_name: @post.human_name) } do %>
                 <i class="icon-st-icons-delete"></i>
-                Delete
+                <%= t("dashboard.posts.delete") %>
               <% end %>
             </li>
           </ul>
         </div>
 
-        <%= link_to "Preview", post_path(@post, preview: generate_hash(@post.title)), class: "btn btn-sm btn-primary btn-outline margin-right margin-left", id: "preview_post", target: "_blank" %>
+        <%= link_to t("dashboard.posts.preview_button"), post_path(@post, preview: generate_hash(@post.title)), class: "btn btn-sm btn-primary btn-outline margin-right margin-left", id: "preview_post", target: "_blank" %>
 
-        <%= link_to (@post.published? ? "Update" : "Save / Publish"), "#", class: 'btn btn-primary btn-sm btn-outline', data: { toggle: 'collapse', target: '#post-advanced-settings' }, id: "advanced-settings-panel-toggle" %>
+        <%= link_to (@post.published? ? t("dashboard.posts.update_button") : t("dashboard.posts.save_publish_button")), "#", class: 'btn btn-primary btn-sm btn-outline', data: { toggle: 'collapse', target: '#post-advanced-settings' }, id: "advanced-settings-panel-toggle" %>
       </div>
     </div>
     <%= render 'storytime/dashboard/posts/image_toolbar' %>

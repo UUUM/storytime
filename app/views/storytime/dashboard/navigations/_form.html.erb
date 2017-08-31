@@ -6,8 +6,8 @@
           <i class="icon-st-icons-st-logo"></i>
         <% end %>
         <div class="pull-right">
-          <%= link_to "Cancel", [storytime, :dashboard, Storytime::Navigation], class: "btn btn-primary btn-sm btn-outline" %>
-          <%= f.submit "Save", class: "btn btn-sm btn-primary btn-outline" %>
+          <%= link_to t("dashboard.common.cancel_button"), [storytime, :dashboard, Storytime::Navigation], class: "btn btn-primary btn-sm btn-outline" %>
+          <%= f.submit t("dashboard.common.save_button"), class: "btn btn-sm btn-primary btn-outline" %>
         </div>
         <h3 class="scroll-panel-title"><%= header %></h3>
       </div>
@@ -42,7 +42,7 @@
           </table>
           <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              Add a Link <span class="caret"></span>
+              <%= t("dashboard.navigations.add_a_link") %> <span class="caret"></span>
             </button>
             <ul class="dropdown-menu left" role="menu">
               <li><%= link_to_add_association "Page Link", f, :links, partial: "page_link_fields", :"data-association-insertion-node" => "#links", :"data-association-insertion-method" => "append" %></li>

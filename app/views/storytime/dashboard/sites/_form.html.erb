@@ -30,7 +30,7 @@
         <%= f.input :ga_tracking_id %>
         
         <div class="well">
-          <%= link_to "Delete Site", [:dashboard, @site], method: :delete, data: { confirm: t('common.are_you_sure_you_want_to_delete', resource_name: "site") }, class: "btn btn-danger btn-outline text-danger btn-sm" %>
+          <%= link_to t("dashboard.sites.delete_site_button"), [:dashboard, @site], method: :delete, data: { confirm: t('common.are_you_sure_you_want_to_delete', resource_name: "site") }, class: "btn btn-danger btn-outline text-danger btn-sm" %>
         </div>
       <% end %>
 

@@ -88,6 +88,7 @@ en:
       save_button: "Save"
       layout_hint: "Leave blank to use the default Storytime site layout"
       domain_hint: "Enter the full domain of your site (e.g. www.example.com)"
+      delete_site_button: "Delete Site"
     users:
       users_header: "Users"
       create_new_user: "New"
@@ -102,6 +103,7 @@ en:
       select_media: "Select Media"
       select_media_by_url: "By URL:"
       select_media_from_file: "Select"
+      upload_a_file: "Upload a File"
     posts:
       autosaves:
         available: "There is an autosave of this %{resource} that is newer than the version below."
@@ -115,11 +117,47 @@ en:
       new:
         header: "New %{resource}"
       confirm_publish: "Are you sure you want to publish?"
+      preview_button: "Preview"
+      update_button: "Update"
+      publish_button: "Publish"
+      save_publish_button: "Save / Publish"
+      draft_button: "Draft"
+      published: "Published"
+      all: "All"
+      drafts: "Drafts"
+      insert_image: "Insert Image"
+      blog_settings: "Blog Settings"
+      delete: "Delete"
+      history: "History"
+      select_featured_image: "Select Featured Image"
+      select_secondary_image: "Select Secondary Image"
+      done_button: "Done"
+      draft: "Draft"
+      ago: "Ago"
+      published_date: "Published"
+      last_edited_date: "last Edited"
+      sort: "Sort"
     navigations:
       create:
         success: "Your navigation list was created successfully."
       update:
         success: "Your navigation list was updated successfully."
+      users: "Users"
+      my_account: "My Account"
+      site_settings: "Site Settings"
+      permissions: "Permissions"
+      subscriptions: "Subscriptions"
+      log_out: "Log Out"
+      add_a_link: "Add a Link"
+    memberships:
+      add_an_existing_user: "Add an Existing User"
+    pages:
+      new_page_button: "New Page"
+    common:
+      new_button: "New"
+      edit_button: "Edit"
+      save_button: "Save"
+      cancel_button: "Cancel"
 
   layout:
     title: "Storytime"
@@ -137,7 +175,7 @@ en:
       navigations:
         index:
           header: "Navigation Lists"
-        new: 
+        new:
           header: "New Navigation List"
         edit:
           header: "Edit Navigation List"
