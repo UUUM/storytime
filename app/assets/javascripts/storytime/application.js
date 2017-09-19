@@ -36,6 +36,7 @@
 //= require chosen.jquery
 //= require medium-editor.min
 //= require storytime_admin
+//= require vanilla-color-picker
 //= require_tree .
 
 window.Storytime || (window.Storytime = {})
