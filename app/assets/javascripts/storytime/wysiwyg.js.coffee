@@ -2,19 +2,21 @@ class Storytime.Dashboard.Wysiwyg
   mediumEditorOptions =
     buttonLabels: 'fontawesome'
     toolbar:
-      buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'h4', 'justifyLeft', 'justifyCenter', 'justifyRight', 'quote', 'unorderedlist', 'orderedlist', 'pre', 'removeFormat']
+      buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'h4', 'colorPicker', 'justifyLeft', 'justifyCenter', 'justifyRight', 'quote', 'unorderedlist', 'orderedlist', 'pre', 'removeFormat']
       align: 'center'
     anchor:
       linkValidation: true
+    extensions:
+      colorPicker: new Storytime.ColorPickerExtension()
 
-  codeMirrorOptions = 
+  codeMirrorOptions =
     mode: 'htmlmixed'
     theme: 'solarized dark'
     tabSize: 2
     autoCloseTags: true
     lineNumbers: true
 
-  tidyOptions = 
+  tidyOptions =
     "indent": "auto",
     "indent-spaces": 2,
     "wrap": 80,
@@ -88,7 +90,7 @@ class Storytime.Dashboard.Wysiwyg
       $caption.css("width", $img.css("width"))
 
     $('body').on "keyup", "#medium-image-height", () ->
-      # set the height, then find the new width and set that and remove the height so image remains responsive
+# set the height, then find the new width and set that and remove the height so image remains responsive
       $(".medium-active-image").css("width", "")
       $(".medium-active-image").css("height", $(this).val())
       newWidth = $(".medium-active-image").css("width")
@@ -133,9 +135,9 @@ class Storytime.Dashboard.Wysiwyg
       codemirror.setValue(html)
 
   setupMedium: ->
-    # Medium-editor keeps adding toolbars when this method gets triggered 
-    # (i.e. when opening snippets modal on post edit page) and they all seem 
-    # to get activated at the same time, so this clears out existing ones first
+# Medium-editor keeps adding toolbars when this method gets triggered
+# (i.e. when opening snippets modal on post edit page) and they all seem
+# to get activated at the same time, so this clears out existing ones first
     $('.medium-editor-toolbar').remove()
     $('.medium-editor-anchor-preview').remove()
     mediumEditor = new MediumEditor('.medium-editor', mediumEditorOptions)
@@ -188,7 +190,7 @@ class Storytime.Dashboard.Wysiwyg
       mediumEditor.setup()
       wysiwyg.find('.editor').show()
       wysiwyg.find('.CodeMirror').hide()
-  
+
   bindTogglesToPanels: () ->
     $(".post-action-panel").on "show.bs.collapse", ->
       $("[data-toggle='codemirror']").hide()
