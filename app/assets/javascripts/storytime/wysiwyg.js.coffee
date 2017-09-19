@@ -2,7 +2,7 @@ class Storytime.Dashboard.Wysiwyg
   mediumEditorOptions =
     buttonLabels: 'fontawesome'
     toolbar:
-      buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'h4', 'colorPicker', 'justifyLeft', 'justifyCenter', 'justifyRight', 'quote', 'unorderedlist', 'orderedlist', 'pre', 'removeFormat']
+      buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'h4', 'colorPicker', 'fontsize', 'justifyLeft', 'justifyCenter', 'justifyRight', 'quote', 'unorderedlist', 'orderedlist', 'pre', 'removeFormat']
       align: 'center'
     anchor:
       linkValidation: true
