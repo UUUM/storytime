@@ -23,22 +23,22 @@ Storytime.ColorPickerExtension = MediumEditor.Extension.extend(
             return
         # colors for picker
         pickerColors = [
-            '#1abc9c'
-            '#2ecc71'
-            '#3498db'
-            '#9b59b6'
-            '#34495e'
-            '#16a085'
-            '#27ae60'
-            '#2980b9'
-            '#8e44ad'
-            '#2c3e50'
-            '#f1c40f'
-            '#e67e22'
-            '#e74c3c'
-            '#bdc3c7'
-            '#95a5a6'
-            '#f39c12'
+            '#000000'
+            '#c0c0c0'
+            '#808080'
+            '#ffffff'
+            '#800000'
+            '#ff0000'
+            '#800080'
+            '#ff00ff'
+            '#008000'
+            '#00ff00'
+            '#808000'
+            '#ffff00'
+            '#000080'
+            '#0000ff'
+            '#008080'
+            '#00ffff'
         ]
         picker = vanillaColorPicker(@document.querySelector('.medium-editor-toolbar-active .editor-color-picker').parentNode)
         picker.set 'customColors', pickerColors
