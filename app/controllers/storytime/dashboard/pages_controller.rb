@@ -15,10 +15,12 @@ module Storytime
         @posts = policy_scope(Storytime::Post).page(params[:page_number]).per(10)
         @posts = @posts.where(type: "Storytime::Page")
 
-        @posts = if params[:published].present? && params[:published] == 'true'
+        @posts = if params[:published].present? && params[:published] == "true"
           @posts.published
         elsif params[:draft].present? && params[:draft] == "true"
-          @posts.draft
+          @posts.draft.where(published_at: nil)
+        elsif params[:reserved].present? && params[:reserved] == "true"
+          @posts.where("published_at > ?", Time.zone.now)
         else
           @posts
         end

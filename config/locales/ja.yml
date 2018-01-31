@@ -125,6 +125,7 @@ ja:
       published: "公開済み"
       all: "全て"
       drafts: "下書き"
+      reserved: "予約投稿"
       insert_image: "画像挿入"
       blog_settings: "ブログ設定"
       delete: "削除"
@@ -179,3 +180,14 @@ ja:
           header: "New Navigation List"
         edit:
           header: "Edit Navigation List"
+
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y年%m月%d日(%a)"
+      short: "%m/%d"
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      short: "%y/%m/%d %H:%M"

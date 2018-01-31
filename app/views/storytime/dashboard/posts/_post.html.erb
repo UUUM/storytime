@@ -11,13 +11,14 @@
 
       <div class="col-md-6 text-muted text-right">
         <% if post.published? && post.published_at <= Time.now %>
+          <span class="label label-success"><%= t("dashboard.posts.published") %></span>
           <%= t("dashboard.posts.published_date") %> <%= time_ago_in_words post.published_at %> <%= t("dashboard.posts.ago") %>
         <% elsif post.published? %>
-          <span class="label label-warning"><%= t("dashboard.posts.draft") %></span>
-          Scheduled to publish on <%= post.published_at.strftime("%B %e at %l:%M %p") %>
+          <span class="label label-warning"><%= t("dashboard.posts.reserved") %></span>
+          <i class="glyphicon glyphicon-time"></i> <%= l(post.published_at) %>
         <% else %>
-          <span class="label label-warning"><%= t("dashboard.posts.draft") %></span>
-            <%= t("dashboard.posts.last_edited_date") %> <%= time_ago_in_words post.updated_at %> <%= t("dashboard.posts.ago") %>
+          <span class="label label-default"><%= t("dashboard.posts.draft") %></span>
+          <%= l(post.updated_at) %>
         <% end %>
       </div>
     </div>

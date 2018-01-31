@@ -101,7 +101,9 @@ module Storytime
         @posts = if params[:published].present? && params[:published] == "true"
           @posts.published
         elsif params[:draft].present? && params[:draft] == "true"
-          @posts.draft
+          @posts.draft.where(published_at: nil)
+        elsif params[:reserved].present? && params[:reserved] == "true"
+          @posts.where("published_at > ?", Time.zone.now)
         else
           @posts
         end
@@ -161,7 +163,7 @@ module Storytime
       end
 
       def search_post_params
-        params.require(:search_post).permit(Search::Post::ATTRIBUTES)
+        params.require(:search_post).permit(Search::Post::ATTRIBUTES.push(:reserved))
       end
     end
   end
